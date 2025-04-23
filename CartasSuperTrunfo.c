@@ -39,6 +39,17 @@ int main ()
    int NuPontoTuristico;
    int NuPontoTuristico2;
 
+   float DensidadePoluacional;
+   float DensidadePoluacional2;
+
+   float pibPcapital;
+   float pibPcapital2;
+
+   float SuperPoder;
+   float SuperPoder2;
+
+   int resultado;
+
    //caregamento manual dos dados carta 1
    printf ("Carta 1: \n");
 
@@ -97,8 +108,16 @@ int main ()
    printf ("Populacao       : %i  \n", Populacao);
    printf ("Area em KM      : %.2f Km \n", AreaKm);
    printf ("PIB             : %.2f  \n", PIB);
-   printf ("Numero de pontos truristicos: %i  \n", NuPontoTuristico); 
+   printf ("Numero de pontos truristicos: %i  \n", NuPontoTuristico);
    
+   //Calculo de densidade populacional e pib para carta 1
+   DensidadePoluacional = (float) Populacao / AreaKm;
+   pibPcapital = (float) PIB / Populacao;
+   printf ("Densidade Populacinal : %.2f \n", DensidadePoluacional) ;
+   printf ("PIB per Capital : %.2f  \n", pibPcapital);
+
+   
+
    
    //mostrando carta 2
    printf ("Carta 2: \n");
@@ -110,6 +129,29 @@ int main ()
    printf ("PIB             : %.2f  \n", PIB2);
    printf ("Numero de pontos truristicos: %i  \n", NuPontoTuristico2); 
    
+   //Calculo de densidade populacional e pib para carta 2
+   DensidadePoluacional2 = (float) Populacao2 / AreaKm2;
+   pibPcapital2 = (float) PIB2 / Populacao2;
+   printf ("Densidade Populacinal : %.2f  \n", DensidadePoluacional2);
+   printf ("PIB per Capital : %.2f  \n", pibPcapital2);
+
+
+   //Batalha de Cartas  0 ganha carta1  1 ganha carta 2 
+   printf ("\n");
+   printf ("Batalha de cartas   0 Carta 1  1 Carta 2  :\n");
+   printf ("Populacao       : %i  \n", (Populacao > Populacao));
+   printf ("Area em KM      : %i \n", (AreaKm > AreaKm2));
+   printf ("PIB             : %i  \n", (PIB > PIB2));
+   printf ("Numero de pontos truristicos: %i  \n", (NuPontoTuristico > NuPontoTuristico2 ));
+
+   printf ("Densidade Populacinal : %i \n", (DensidadePoluacional > DensidadePoluacional2 ));
+   printf ("PIB per Capital : %i  \n", (pibPcapital > pibPcapital2));
+
+   printf ("GanhaA Super carta : %i  \n", (Populacao+AreaKm+PIB+NuPontoTuristico+pibPcapital/DensidadePoluacional >
+                                          Populacao2+AreaKm2+PIB2+NuPontoTuristico2+pibPcapital2/DensidadePoluacional2));
+    
+   
+
 
    return 0;
 }
