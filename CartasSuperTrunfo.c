@@ -50,6 +50,31 @@ int main ()
 
    int resultado;
 
+   //iniciando var
+   
+   Populacao  = 0 ;
+   Populacao2 = 0 ;
+   
+   AreaKm  = 0 ;
+   AreaKm2 = 0 ;
+   
+   PIB  = 0;
+   PIB2 = 0;
+   
+   NuPontoTuristico  = 0;
+   NuPontoTuristico2 = 0;
+
+   DensidadePoluacional  = 0;
+   DensidadePoluacional2 = 0;
+
+   pibPcapital  = 0;
+   pibPcapital2 = 0;
+
+   SuperPoder = 0;
+   SuperPoder2 = 0;
+
+
+
    //caregamento manual dos dados carta 1
    printf ("Carta 1: \n");
 
@@ -139,18 +164,53 @@ int main ()
    //Batalha de Cartas  0 ganha carta1  1 ganha carta 2 
    printf ("\n");
    printf ("Batalha de cartas   0 Carta 1  1 Carta 2  :\n");
-   printf ("Populacao       : %i  \n", (Populacao > Populacao));
-   printf ("Area em KM      : %i \n", (AreaKm > AreaKm2));
-   printf ("PIB             : %i  \n", (PIB > PIB2));
-   printf ("Numero de pontos truristicos: %i  \n", (NuPontoTuristico > NuPontoTuristico2 ));
 
-   printf ("Densidade Populacinal : %i \n", (DensidadePoluacional > DensidadePoluacional2 ));
-   printf ("PIB per Capital : %i  \n", (pibPcapital > pibPcapital2));
+   if (Populacao > Populacao2){
+    printf ("Carta 1 Ganhou Populacao  : %.i  \n", (Populacao));
+   } else {
+    printf ("Carta 2 Ganhou Populacao  : %.i  \n", (Populacao2));
+   }
 
-   printf ("GanhaA Super carta : %i  \n", (Populacao+AreaKm+PIB+NuPontoTuristico+pibPcapital/DensidadePoluacional >
-                                          Populacao2+AreaKm2+PIB2+NuPontoTuristico2+pibPcapital2/DensidadePoluacional2));
-    
+   if (AreaKm > AreaKm2){   
+    printf ("Carta 1 Ganhou Area em KM   : %.2f \n", (AreaKm));
+   } else {
+    printf ("Carta 2 Ganhou Area em KM   : %.2f \n", (AreaKm2));
+   }
+
+   if (PIB > PIB2){   
+    printf ("Carta 1 Ganhou PIB          : %.2f  \n", (PIB));
+   } else {
+    printf ("Carta 2 Ganhou PIB          : %.2f  \n", (PIB2));
+   }
    
+   if (NuPontoTuristico > NuPontoTuristico2){  
+    printf ("Carta 1 Ganhou Numero de pontos truristicos: %i  \n", (NuPontoTuristico));
+   } else {
+    printf ("Carta 2 Ganhou Numero de pontos truristicos: %i  \n", (NuPontoTuristico2));
+   }
+
+   if (DensidadePoluacional > DensidadePoluacional2){     
+    printf ("Carta 1 Ganhou Densidade Populacinal : %.2f \n", (DensidadePoluacional));
+   } else {
+    printf ("Carta 2 Ganhou Densidade Populacinal : %.2f \n", (DensidadePoluacional2));
+   }
+   
+   if (pibPcapital > pibPcapital2){   
+    printf ("Carta 1 Ganhou PIB per Capital : %.2f  \n", (pibPcapital));
+   } else {
+    printf ("Carta 2 Ganhou PIB per Capital : %.2f  \n", (pibPcapital2));
+   } 
+ 
+   //super
+    SuperPoder = Populacao+AreaKm+PIB+NuPontoTuristico+pibPcapital/DensidadePoluacional;
+
+    SuperPoder2 = Populacao2+AreaKm2+PIB2+NuPontoTuristico2+pibPcapital2/DensidadePoluacional2;
+    
+   if (SuperPoder > SuperPoder2){   
+    printf ("Carta 1 Ganhou SuperPoder : %.2f  \n", (SuperPoder));
+   } else {
+    printf ("Carta 2 Ganhou SuperPoder : %.2f  \n", (SuperPoder2));
+   }
 
 
    return 0;
