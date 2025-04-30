@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 // Desafio Super Trunfo - Países
@@ -18,9 +19,23 @@
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 int main ()
 {
-   //var
+   //var switch
    int opisao;
-   
+   //var da Batalha
+
+   int ataque;
+   int ataque2;
+
+   int defeza;
+   int defeza2;
+
+   int resutado;
+   int resutado2;
+
+   int selecionado;
+   int selecionado2;
+
+   //var Sistema
    char estado      [30];
    char estado2     [30];
    
@@ -54,6 +69,18 @@ int main ()
    int resultado;
 
    //iniciando var
+
+   ataque  =  0;
+   ataque2 =  0;
+
+   defeza  =  0;
+   defeza2 =  0;
+
+   resultado =0;
+   resutado2 =0;
+
+   selecionado  =0;
+   selecionado2 =0;
    
    Populacao  = 0 ;
    Populacao2 = 0 ;
@@ -173,8 +200,11 @@ case 1:
    printf ("Densidade Populacinal : %.2f  \n", DensidadePoluacional2);
    printf ("PIB per Capital : %.2f  \n\n\n", pibPcapital2);
 
-//menu de Batalha
-   printf ("Escolha Qual Atributo Que quer usar para a Batalha\n");
+//menu de Batalha 1
+   printf ("Escolha 2 Atributo Que quer usar para a Batalha\n");
+   printf ("Escolha 1 Por Vez \n \n");
+
+   printf ("Escolha Primeiro Atributo\n");
    printf (" 1 -Populacao\n");
    printf (" 2 -Area em Km\n");
    printf (" 3 -PIB\n");
@@ -186,79 +216,67 @@ case 1:
 //Switch da Batalha   
 switch (opisao)
 {
-case 1:   
-    if (Populacao > Populacao2)
-    {
-      printf("Carta 1 Ganho :%s \n",NomeCidade);
-      printf("Carta 1 Ganhou Com :%i \n",Populacao);        
-    } else if (Populacao < Populacao2)
-    {
-      printf("Carta 2 Ganho :%s \n",NomeCidade2);
-      printf("Carta 2 Ganhou Com :%i \n",Populacao2);        
-    } else if (Populacao = Populacao2)
-    {
-     printf("As Cartas Empato :%s - %s \n",NomeCidade,NomeCidade2);
-     printf("As Cartas Empato :%i - %i \n",Populacao,Populacao2); 
+case 1: 
+    selecionado = 1; 
+    if (Populacao > Populacao2){
+      ataque = 1;
+    }
+     else if (Populacao < Populacao2){
+      defeza = 1;
+    } 
+    else if (Populacao == Populacao2){
+      ataque = 0;
     }   
     break;
+   
     case 2:
-    if (AreaKm > AreaKm2)
-    {
-      printf("Carta 1 Ganho :%s \n",NomeCidade);
-      printf("Carta 1 Ganhou Com :%.2f \n",AreaKm);        
-    } else if (AreaKm < AreaKm2)
-    {
-      printf("Carta 2 Ganho :%s \n",NomeCidade2);
-      printf("Carta 2 Ganhou Com :%.2f \n",AreaKm2);        
-    } else if (AreaKm = AreaKm2)
-    {
-     printf("As Cartas Empato :%s - %s \n",NomeCidade,NomeCidade2);
-     printf("As Cartas Empato :%.2f - %.2f \n",AreaKm,AreaKm2); 
+    selecionado = 2;
+    if (AreaKm > AreaKm2){
+      ataque = 1;
+    } 
+    else if (AreaKm < AreaKm2){
+      defeza = 1;
+    } 
+    else if (AreaKm == AreaKm2){
+      ataque = 0;
     }   
     break;
+    
     case 3:
-    if (PIB > PIB2)
-    {
-      printf("Carta 1 Ganho :%s \n",NomeCidade);
-      printf("Carta 1 Ganhou Com :%.2f \n",PIB);        
-    } else if (PIB < PIB2)
-    {
-      printf("Carta 2 Ganho :%s \n",NomeCidade2);
-      printf("Carta 2 Ganhou Com :%.2f \n",PIB2);        
-    } else if (PIB = PIB2)
-    {
-     printf("As Cartas Empato :%s - %s \n",NomeCidade,NomeCidade2);
-     printf("As Cartas Empato :%.2f - %.2f \n",PIB,PIB2);
+    selecionado = 3;
+    if (PIB > PIB2){
+      ataque = 1;
+    } 
+    else if (PIB < PIB2){
+      defeza = 1;
+    } 
+    else if (PIB == PIB2){
+      ataque = 0;
     }    
     break;
+    
     case 4:
-    if (NuPontoTuristico > NuPontoTuristico2)
-    {
-      printf("Carta 1 Ganho :%s \n",NomeCidade);
-      printf("Carta 1 Ganhou Com :%i \n",NuPontoTuristico);        
-    } else if (NuPontoTuristico < NuPontoTuristico2)
-    {
-      printf("Carta 2 Ganho :%s \n",NomeCidade2);
-      printf("Carta 2 Ganhou Com :%i \n",NuPontoTuristico2);        
-    } else if (NuPontoTuristico = NuPontoTuristico2) 
-    {
-     printf("As Cartas Empato :%s - %s \n",NomeCidade,NomeCidade2);
-     printf("As Cartas Empato :%i - %i \n",NuPontoTuristico,NuPontoTuristico2); 
+     selecionado = 4;
+    if (NuPontoTuristico > NuPontoTuristico2) {
+      ataque = 1;
+    } 
+    else if (NuPontoTuristico < NuPontoTuristico2) {
+      defeza = 1;
+    } else if (NuPontoTuristico == NuPontoTuristico2) {
+     ataque = 0; 
     }   
     break;
+    
     case 5:
-    if (DensidadePoluacional < DensidadePoluacional2)
-    {
-      printf("Carta 1 Ganho :%s \n",NomeCidade);
-      printf("Carta 1 Ganhou Com :%.2f \n",DensidadePoluacional);        
-    } else if (DensidadePoluacional > DensidadePoluacional2)
-    {
-      printf("Carta 2 Ganho :%s \n",NomeCidade2);
-      printf("Carta 2 Ganhou Com :%.2f \n",DensidadePoluacional2);        
-    } else if (DensidadePoluacional = DensidadePoluacional2)
-    {
-     printf("As Cartas Empato :%s - %s \n",NomeCidade,NomeCidade2);
-     printf("As Cartas Empato :%.2f - %.2f \n",DensidadePoluacional,DensidadePoluacional2); 
+    selecionado = 5;
+    if (DensidadePoluacional < DensidadePoluacional2) {
+      ataque = 1;
+    } 
+    else if (DensidadePoluacional > DensidadePoluacional2) {
+      defeza = 1;
+    }
+     else if (DensidadePoluacional == DensidadePoluacional2) {
+     ataque = 0; 
     }    
     break;
 
@@ -282,16 +300,390 @@ default:
     break;
 } 
 
-   //super
-//    SuperPoder = Populacao+AreaKm+PIB+NuPontoTuristico+pibPcapital/DensidadePoluacional;
-//
-//   SuperPoder2 = Populacao2+AreaKm2+PIB2+NuPontoTuristico2+pibPcapital2/DensidadePoluacional2;
-//    
-//   if (SuperPoder > SuperPoder2){   
-//    printf ("Carta 1 Ganhou SuperPoder : %.2f  \n", (SuperPoder));
-//   } else {
-//    printf ("Carta 2 Ganhou SuperPoder : %.2f  \n", (SuperPoder2));
-//   }
+
+//menu de Batalha 2
+
+printf ("Escolha a Segundo Atributo\n");
+printf ("atributo - %i - ja foi escolido Selecione outro \n", selecionado);
+
+printf (" 1 -Populacao\n");
+printf (" 2 -Area em Km\n");
+printf (" 3 -PIB\n");
+printf (" 4 -Numero de pontos Turisticos\n");
+printf (" 5 -Densidade Demografica\n");
+scanf ("%i", &opisao);
+
+
+//Switch da Batalha 2   
+switch (opisao)
+{
+case 1: 
+ selecionado2 =1;
+ if (selecionado == selecionado2) {
+  printf("essa opisao ja foi ussada nao pode ser ussada 2 vez");
+  EXIT_SUCCESS;
+ } 
+ else if (Populacao > Populacao2) {
+   ataque2 = 1;
+ } 
+ else if (Populacao < Populacao2) {
+   defeza2 = 1;
+ }
+  else if (Populacao == Populacao2) {
+   ataque2 = 0;
+ }   
+ break;
+
+ case 2:
+ selecionado2 =2;
+ if (selecionado == selecionado2)
+ {
+  printf("essa opisao ja foi ussada nao pode ser ussada 2 vez");
+  EXIT_SUCCESS;
+ } 
+ else if (AreaKm > AreaKm2) {
+   ataque2 = 1;
+ } 
+ else if (AreaKm < AreaKm2) {
+   defeza2 = 1;
+ } 
+ else if (AreaKm == AreaKm2) {
+   ataque2 = 0;
+ }   
+ break;
+ 
+ case 3:
+ selecionado2 =3;
+ if (selecionado == selecionado2)
+ {
+  printf("essa opisao ja foi ussada nao pode ser ussada 2 vez");
+  EXIT_SUCCESS;
+ } 
+ else if (PIB > PIB2) {
+   ataque2 = 1;
+ } 
+ else if (PIB < PIB2) {
+   defeza2 = 1;
+ } 
+ else if (PIB == PIB2) {
+   ataque2 = 0;
+ }    
+ break;
+ 
+ case 4:
+ selecionado2 =4;
+ if (selecionado == selecionado2)
+ {
+  printf("essa opisao ja foi ussada nao pode ser ussada 2 vez");
+  EXIT_SUCCESS;
+ }
+  else if (NuPontoTuristico > NuPontoTuristico2) {
+   ataque2 = 1;
+ } 
+ else if (NuPontoTuristico < NuPontoTuristico2) {
+   defeza2 = 1;
+ } 
+ else if (NuPontoTuristico = NuPontoTuristico2)  {
+  ataque2 = 0; 
+ }   
+ break;
+ 
+ case 5:
+ selecionado2 =5;
+ if (selecionado == selecionado2)
+ {
+  printf("essa opisao ja foi ussada nao pode ser ussada 2 vez");
+  EXIT_SUCCESS;
+ }
+  else if (DensidadePoluacional < DensidadePoluacional2) {
+   ataque2 = 1;
+ } 
+ else if (DensidadePoluacional > DensidadePoluacional2) {
+   defeza2 = 1;
+ } 
+ else if (DensidadePoluacional = DensidadePoluacional2) {
+  ataque2 = 0; 
+ }    
+ break;
+
+default:
+ printf (" Entrada invalida \n");
+ EXIT_SUCCESS;    
+ break;
+}
+
+printf("\n \n \n"); 
+printf("Resultado :\n"); 
+
+// Resultado de Quem ganhou
+resultado = ataque + ataque2;
+resutado2 = defeza + defeza2;
+
+
+// Atributo 1 Carta 1
+if (resultado == 2)
+{
+ printf("Carta 1 Ganhou Atributo 1 \n"); 
+ if (selecionado == 1) {
+  printf("Populacao Ganhou : %i \n",Populacao);
+ } 
+ else if (selecionado == 2) {
+  printf("AreaKm Ganhou : %.2f \n",AreaKm);
+ }
+  else if (selecionado == 3) {
+  printf("PIB Ganhou : %.2f \n",PIB);
+ } 
+ else if (selecionado == 4) {
+  printf("Numero de ponto Turistico Ganhou : %i \n",NuPontoTuristico);
+ } 
+ else if (selecionado == 5) {
+  printf("Densidade Populasional Ganhou : %.2f \n",DensidadePoluacional);
+ } 
+}
+//atributo 2 Carta 1
+if (resutado == 2)
+{
+ printf("Carta 1 Ganhou Atributo2 \n"); 
+ if (selecionado2 == 1)
+ {
+  printf("Populacao Ganhou : %i \n",Populacao);
+ } else if (selecionado2 == 2)
+ {
+  printf("AreaKm Ganhou : %.2f \n",AreaKm);
+ } else if (selecionado2 == 3)
+ {
+  printf("PIB Ganhou : %.2f \n",PIB);
+ } else if (selecionado2 == 4)
+ {
+  printf("Numero de ponto Turistico Ganhou : %i \n",NuPontoTuristico);
+ } else if (selecionado2 == 5)
+ {
+  printf("Densidade Populasional Ganhou : %.2f \n",DensidadePoluacional);
+ } 
+}
+
+//Carta2 Atributo 1
+if (resutado2 == 2)
+{
+ printf("Carta 2 Ganhou Atributo 1 \n"); 
+ if (selecionado == 1) {
+  printf("Populacao Ganhou : %i \n",Populacao2);
+ } 
+ else if (selecionado == 2) {
+  printf("AreaKm Ganhou : %.2f \n",AreaKm2);
+ }
+  else if (selecionado == 3) {
+  printf("PIB Ganhou : %.2f \n",PIB2);
+ } 
+ else if (selecionado == 4) {
+  printf("Numero de ponto Turistico Ganhou : %i \n",NuPontoTuristico2);
+ } 
+ else if (selecionado == 5) {
+  printf("Densidade Populasional Ganhou : %.2f \n",DensidadePoluacional2);
+ } 
+}
+
+//Carta 2 Atributo 2
+if (resutado2 == 2)
+{
+ printf("Carta 2 Ganhou Atributo 1 \n"); 
+ if (selecionado == 1) {
+  printf("Populacao Ganhou : %i \n",Populacao2);
+ } 
+ else if (selecionado == 2) {
+  printf("AreaKm Ganhou : %.2f \n",AreaKm2);
+ }
+  else if (selecionado == 3) {
+  printf("PIB Ganhou : %.2f \n",PIB2);
+ } 
+ else if (selecionado == 4) {
+  printf("Numero de ponto Turistico Ganhou : %i \n",NuPontoTuristico2);
+ } 
+ else if (selecionado == 5) {
+  printf("Densidade Populasional Ganhou : %.2f \n",DensidadePoluacional2);
+ } 
+}
+
+
+//Empate
+//carta 1 Atributo 1
+if (resultado == 1) 
+{
+ printf("Carta 1 Atributo 1 empato \n"); 
+ if (selecionado == 1)
+ {
+  printf("Populacao  : %i \n",Populacao);
+ } else if (selecionado == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm);
+ } else if (selecionado == 3)
+ {
+  printf("PIB  : %.2f \n",PIB);
+ } else if (selecionado == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico);
+ } else if (selecionado == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional);
+ } 
+}
+//Carta 1 Atributo 2
+if (resutado == 1)
+{
+ printf("Carta 1  Atributo2 Empato \n"); 
+ if (selecionado2 == 1)
+ {
+  printf("Populacao  : %i \n",Populacao);
+ } else if (selecionado2 == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm);
+ } else if (selecionado2 == 3)
+ {
+  printf("PIB  : %.2f \n",PIB);
+ } else if (selecionado2 == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico);
+ } else if (selecionado2 == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional);
+ } 
+}
+
+//carta 2 Atributo 1
+
+if (resutado2 == 1)
+{
+ printf("Carta 2  Atributo1 Empato \n"); 
+ if (selecionado == 1)
+ {
+  printf("Populacao  : %i \n",Populacao2);
+ } else if (selecionado == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm2);
+ } else if (selecionado == 3)
+ {
+  printf("PIB  : %.2f \n",PIB2);
+ } else if (selecionado == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico2);
+ } else if (selecionado == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional2);
+ } 
+}
+
+//Carta 2 Atributo 2
+
+if (resutado2 == 1)
+{
+ printf("Carta 2  Atributo1 Empato \n"); 
+ if (selecionado2 == 1)
+ {
+  printf("Populacao  : %i \n",Populacao2);
+ } else if (selecionado2 == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm2);
+ } else if (selecionado2 == 3)
+ {
+  printf("PIB  : %.2f \n",PIB2);
+ } else if (selecionado2 == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico2);
+ } else if (selecionado2 == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional2);
+ } 
+}
+
+
+//Perdeu
+//Carta 1 Atributo 1
+if (resultado == 0) 
+{
+ printf("Carta 1 Atributo 1 Perdeu \n"); 
+ if (selecionado == 1)
+ {
+  printf("Populacao  : %i \n",Populacao);
+ } else if (selecionado == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm);
+ } else if (selecionado == 3)
+ {
+  printf("PIB  : %.2f \n",PIB);
+ } else if (selecionado == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico);
+ } else if (selecionado == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional);
+ } 
+}
+
+//carta 1 Atributo 2
+if (resultado == 0) 
+{
+ printf("Carta 1 Atributo 2 Perdeu \n"); 
+ if (selecionado2 == 1)
+ {
+  printf("Populacao  : %i \n",Populacao);
+ } else if (selecionado2 == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm);
+ } else if (selecionado2 == 3)
+ {
+  printf("PIB  : %.2f \n",PIB);
+ } else if (selecionado2 == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico);
+ } else if (selecionado2 == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional);
+ } 
+}
+
+//Carta 2 Atributo 1
+if (resutado2 == 0)
+{
+ printf("Carta 2  Atributo1 perdeu \n"); 
+ if (selecionado == 1)
+ {
+  printf("Populacao  : %i \n",Populacao2);
+ } else if (selecionado == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm2);
+ } else if (selecionado == 3)
+ {
+  printf("PIB  : %.2f \n",PIB2);
+ } else if (selecionado == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico2);
+ } else if (selecionado == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional2);
+ } 
+}
+
+//Carta 2 Atributo 2
+if (resutado2 == 0)
+{
+ printf("Carta 2  Atributo1 Perdeu \n"); 
+ if (selecionado2 == 1)
+ {
+  printf("Populacao  : %i \n",Populacao2);
+ } else if (selecionado2 == 2)
+ {
+  printf("AreaKm  : %.2f \n",AreaKm2);
+ } else if (selecionado2 == 3)
+ {
+  printf("PIB  : %.2f \n",PIB2);
+ } else if (selecionado2 == 4)
+ {
+  printf("Numero de ponto Turistico  : %i \n",NuPontoTuristico2);
+ } else if (selecionado2 == 5)
+ {
+  printf("Densidade Populasional  : %.2f \n",DensidadePoluacional2);
+ } 
+}
 
 
    return 0;
